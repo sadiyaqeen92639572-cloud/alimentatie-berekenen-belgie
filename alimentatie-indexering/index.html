@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alimentatie Indexering 2026 — Statbel Gezondheidsindex Berekenen</title>
+<meta name="description" content="Bereken de jaarlijkse indexering van alimentatie op basis van de Belgische gezondheidsindex (Statbel). Geef het oorspronkelijk bedrag en jaar in, ontvang het geïndexeerde bedrag voor 2026.">
+<meta name="keywords" content="alimentatie indexering, indexering alimentatie berekenen, alimentatie index berekenen">
+<link rel="canonical" href="https://alimentatie-berekenen.be/alimentatie-indexering/">
+<meta property="og:title" content="Alimentatie Indexering 2026 — Statbel">
+<meta property="og:description" content="Jaarlijkse indexering van alimentatie op basis van de Statbel gezondheidsindex.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alimentatie-berekenen.be/alimentatie-indexering/">
+<meta property="og:locale" content="nl_BE">
+<link rel="icon" href="/favicon.png" type="image/png">
+<meta property="og:image" content="https://alimentatie-berekenen.be/og-image.png">
+<link rel="stylesheet" href="/assets/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Alimentatie Indexering 2026 — Statbel",
+      "url": "https://alimentatie-berekenen.be/alimentatie-indexering/",
+      "description": "Rekentool voor de jaarlijkse indexering van alimentatie op basis van de Belgische gezondheidsindex (Statbel).",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "nl-BE",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "areaServed": { "@type": "Country", "name": "Belgium" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hoe wordt alimentatie geïndexeerd in België?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Alimentatie wordt jaarlijks geïndexeerd op basis van de gladde gezondheidsindex, gepubliceerd door Statbel. Formule: geïndexeerd bedrag = oorspronkelijk bedrag × (huidige index / index bij vaststelling). Het vonnis of de overeenkomst moet deze indexeringsclausule voorzien." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is indexering van alimentatie automatisch?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Enkel indien het vonnis of de overeenkomst een indexeringsclausule bevat. Zonder zo'n clausule is indexering niet automatisch en moet ze eventueel aan de rechter gevraagd worden." }
+        },
+        {
+          "@type": "Question",
+          "name": "Waar vind ik de exacte Statbel-index van mijn referentiemaand?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Op statbel.fgov.be, onder 'consumptieprijzen' / 'gezondheidsindex'. Onze rekentool gebruikt de januari-index van elk jaar als referentie — controleer voor een exacte berekening de index van uw specifieke referentiemaand." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alimentatie-berekenen.be/" },
+        { "@type": "ListItem", "position": 2, "name": "Alimentatie indexering", "item": "https://alimentatie-berekenen.be/alimentatie-indexering/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <span class="flag">🇧🇪</span>
+  <h1>Alimentatie Indexering 2026 — Statbel Gezondheidsindex</h1>
+  <p>Bereken het geïndexeerde bedrag van uw alimentatie voor 2026. Gratis, geen account nodig.</p>
+  <nav class="crossnav">
+    <a href="/">Hoofdcalculator</a>
+    <a href="/kinderalimentatie-berekenen/">Kinderalimentatie</a>
+    <a href="/partneralimentatie-berekenen/">Partneralimentatie</a>
+    <a href="/davo-onderhoudsgeld/">DAVO / niet betaald</a>
+  </nav>
+</header>
+
+<div class="container tool-wrapper">
+  <div class="tool-card" style="border-radius:12px;">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Oorspronkelijk bedrag <span>€/maand</span></label>
+        <input type="number" id="idxBedrag" min="0" placeholder="ex: 300">
+      </div>
+      <div class="form-group">
+        <label>Jaar van vaststelling</label>
+        <select id="idxJaar">
+          <option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option>
+          <option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option>
+          <option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option>
+          <option value="2024" selected>2024</option><option value="2025">2025</option>
+        </select>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculerIndexUI()">Bereken geïndexeerd bedrag 2026 →</button>
+    <div class="result" id="result-index">
+      <div class="result-hero">
+        <div class="r-label">Geïndexeerd bedrag 2026</div>
+        <div class="r-amount" id="ri-amount">—</div>
+        <div class="r-sub" id="ri-sub"></div>
+      </div>
+      <div class="result-grid" id="ri-grid"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container content">
+  <h2 class="section-title">Hoe werkt de indexeringsformule?</h2>
+  <div class="index-formula">geïndexeerd_bedrag = oorspronkelijk_bedrag × (index[2026] / index[vaststellingsjaar])</div>
+  <p>Alimentatie in België wordt jaarlijks <strong>geïndexeerd</strong> op basis van de gladde gezondheidsindex, gepubliceerd door <a href="https://statbel.fgov.be/nl/themas/consumptieprijzen/gezondheidsindex" target="_blank" rel="noopener">Statbel</a>. Enkel indien het vonnis of de overeenkomst een indexeringsclausule voorziet.</p>
+
+  <h3 class="sub">Gezondheidsindex per jaar (januari, basis 2013=100)</h3>
+  <div class="table-wrap">
+    <table class="igak-table">
+      <thead><tr><th>Jaar</th><th>Index</th></tr></thead>
+      <tbody>
+        <tr><td>2015</td><td>102,7</td></tr><tr><td>2016</td><td>103,6</td></tr><tr><td>2017</td><td>105,1</td></tr>
+        <tr><td>2018</td><td>107,3</td></tr><tr><td>2019</td><td>109,5</td></tr><tr><td>2020</td><td>110,4</td></tr>
+        <tr><td>2021</td><td>111,4</td></tr><tr><td>2022</td><td>115,9</td></tr><tr><td>2023</td><td>129,0</td></tr>
+        <tr><td>2024</td><td>131,8</td></tr><tr><td>2025</td><td>134,9</td></tr><tr><td class="highlight-pct">2026</td><td class="highlight-pct">137,3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">Veelgestelde vragen</h2>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Hoe wordt alimentatie geïndexeerd in België?</button>
+    <div class="faq-a">Jaarlijks op basis van de gladde gezondheidsindex (Statbel). Formule: geïndexeerd bedrag = oorspronkelijk bedrag × (huidige index / index bij vaststelling). Het vonnis of de overeenkomst moet deze clausule voorzien.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Is indexering van alimentatie automatisch?</button>
+    <div class="faq-a">Enkel indien het vonnis of de overeenkomst een indexeringsclausule bevat. Zonder clausule moet indexering eventueel aan de rechter gevraagd worden.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Waar vind ik de exacte index van mijn referentiemaand?</button>
+    <div class="faq-a">Op <a href="https://statbel.fgov.be/nl/themas/consumptieprijzen/gezondheidsindex" target="_blank" rel="noopener">statbel.fgov.be</a>. Onze tool gebruikt de januari-index als referentie — controleer uw specifieke referentiemaand voor een exacte berekening.</div>
+  </div>
+
+  <div class="disclaimer-box">
+    <strong>Disclaimer:</strong> deze indices zijn de januari-indices van elk jaar, als indicatieve referentie. Voor een juridisch exacte berekening, gebruik de index van uw specifieke referentiemaand via statbel.fgov.be.
+    <div class="last-verified">Laatst geverifieerd: 31 juli 2026</div>
+  </div>
+</div>
+
+<footer>
+  <p>Alimentatie Berekenen België — Gesmine-Invest Limited</p>
+  <p><a href="/">← Terug naar hoofdcalculator</a></p>
+</footer>
+
+<script src="/assets/calc-engine.js"></script>
+<script>
+function calculerIndexUI() {
+  const bedrag = parseFloat(document.getElementById('idxBedrag').value);
+  const jaar = parseInt(document.getElementById('idxJaar').value);
+  if (!bedrag || bedrag <= 0) { alert('Geef het bedrag in.'); return; }
+  const r = berekenIndexering(bedrag, jaar, 2026);
+  document.getElementById('ri-amount').textContent = r.geindexeerd.toFixed(2).replace('.', ',') + ' €/maand';
+  document.getElementById('ri-sub').textContent = `Stijging van ${(r.geindexeerd - bedrag).toFixed(2).replace('.', ',')} € sinds ${jaar} (+${((r.ratio-1)*100).toFixed(1)}%)`;
+  document.getElementById('ri-grid').innerHTML = `
+    <div class="r-stat"><div class="sv">${bedrag.toFixed(0)} €</div><div class="sl">Oorspronkelijk (${jaar})</div></div>
+    <div class="r-stat"><div class="sv">×${r.ratio.toFixed(3)}</div><div class="sl">Indexcoëfficiënt</div></div>
+    <div class="r-stat"><div class="sv">${r.geindexeerd.toFixed(2).replace('.', ',')} €</div><div class="sl">Geïndexeerd 2026</div></div>
+  `;
+  document.getElementById('result-index').style.display = 'block';
+  document.getElementById('result-index').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+function toggleFaq(btn) { btn.classList.toggle('open'); btn.nextElementSibling.classList.toggle('open'); }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "source": "Officiële rekentool kinderalimentatie (methode Hobin), versie maart 2026, gepubliceerd door de Belgische hoven en rechtbanken",
+  "source_url": "https://www.rechtbanken-tribunaux.be/nl/node/3520",
+  "manual_url": "https://www.ordevanvlaamsebalies.be/ovb_filesystem/ovb/Documenten/burgerlijk-recht/Handleiding-rekentool-Hobin.pdf",
+  "extracted": "2026-07-31",
+  "leefloon": {
+    "alleenstaande_eur": 1340.47,
+    "samenwonende_pct_van_alleenstaande": 0.5,
+    "samenwonende_eur": 670.235,
+    "last_updated": "2026-03",
+    "official_source": "https://www.mi-is.be/nl/tools-ocmw/bedragen-equivalent-leefloon",
+    "note": "Forfaitaire niet-samendrukbare kost per ouder. Standaard voorstel van de rekentool, mag door de gebruiker overschreven worden met de werkelijke vaste woonkost indien gewenst."
+  },
+  "verblijfsregelingen": [
+    { "id": "week_week", "label": "Week/week (50/50)", "ouder1_verblijfsgebonden": 0.5, "ouder2_verblijfsgebonden": 0.5, "ouder1_verblijfsoverstijgend": 0.5, "ouder2_verblijfsoverstijgend": 0.5 },
+    { "id": "8_6", "label": "8/6 dagen + helft vakantie", "ouder1_verblijfsgebonden": 0.4465, "ouder2_verblijfsgebonden": 0.5535, "ouder1_verblijfsoverstijgend": 0.5, "ouder2_verblijfsoverstijgend": 0.5 },
+    { "id": "9_5", "label": "9/5 dagen + helft vakantie", "ouder1_verblijfsgebonden": 0.3958, "ouder2_verblijfsgebonden": 0.6042, "ouder1_verblijfsoverstijgend": 0.15, "ouder2_verblijfsoverstijgend": 0.85 },
+    { "id": "10_4", "label": "10/4 dagen + helft vakantie", "ouder1_verblijfsgebonden": 0.3452, "ouder2_verblijfsgebonden": 0.6548, "ouder1_verblijfsoverstijgend": 0.15, "ouder2_verblijfsoverstijgend": 0.85 },
+    { "id": "11_3", "label": "11/3 dagen + helft vakantie", "ouder1_verblijfsgebonden": 0.2945, "ouder2_verblijfsgebonden": 0.7055, "ouder1_verblijfsoverstijgend": 0.05, "ouder2_verblijfsoverstijgend": 0.95 },
+    { "id": "we_helft_vak", "label": "1 weekend/2 + helft vakantie", "ouder1_verblijfsgebonden": 0.2438, "ouder2_verblijfsgebonden": 0.7562, "ouder1_verblijfsoverstijgend": 0.05, "ouder2_verblijfsoverstijgend": 0.95 }
+  ],
+  "note_verblijf": "Percentages = suggesties van de ontwerpers van de rekentool bij gebrek aan concrete gegevens (bron: officiële handleiding). Verblijfsgebonden = dagelijkse kosten (eten, vervoer, zakgeld). Verblijfsoverstijgende = kledij, schoolkosten, medische basiskosten."
+}

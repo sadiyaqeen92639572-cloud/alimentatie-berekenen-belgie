@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinderalimentatie Berekenen 2026 — IGAK Tabel per Leeftijd (Methode Hobin)</title>
+<meta name="description" content="Bereken kinderalimentatie per leeftijd met de officiële IGAK-tabel (methode Hobin). Volledige tabel 0-24 jaar, tot welke leeftijd alimentatie verschuldigd is, en gratis rekentool.">
+<meta name="keywords" content="kinderalimentatie berekenen, kinderalimentatie tabel, kinderalimentatie tot welke leeftijd, herberekenen kinderalimentatie, kinderalimentatie aftrekbaar, kind alimentatie berekenen">
+<link rel="canonical" href="https://alimentatie-berekenen.be/kinderalimentatie-berekenen/">
+<meta property="og:title" content="Kinderalimentatie Berekenen 2026 — IGAK Tabel">
+<meta property="og:description" content="Volledige IGAK-tabel per leeftijd, methode Hobin. Gratis rekentool kinderalimentatie.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alimentatie-berekenen.be/kinderalimentatie-berekenen/">
+<meta property="og:locale" content="nl_BE">
+<link rel="icon" href="/favicon.png" type="image/png">
+<meta property="og:image" content="https://alimentatie-berekenen.be/og-image.png">
+<link rel="stylesheet" href="/assets/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Kinderalimentatie Berekenen — IGAK Tabel 2026",
+      "url": "https://alimentatie-berekenen.be/kinderalimentatie-berekenen/",
+      "description": "Rekentool kinderalimentatie op basis van de officiële IGAK-tabel (methode Hobin), per leeftijd van het kind.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "nl-BE",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "areaServed": { "@type": "Country", "name": "Belgium" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Tot welke leeftijd moet kinderalimentatie betaald worden?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In principe tot het kind zelfstandig in zijn onderhoud kan voorzien — er is geen vaste leeftijdsgrens in de wet. In de praktijk loopt dit meestal door tot het einde van de studies (vaak 22-25 jaar), zolang het kind nog geen inkomen uit werk heeft dat het levensonderhoud dekt. De IGAK-tabel voorziet cijfers tot en met 24 jaar of meer." }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe verandert kinderalimentatie met de leeftijd van het kind?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Volgens de IGAK-tabel stijgt de gemiddelde kost van een kind naarmate het ouder wordt — van ongeveer 15% van het gezinsinkomen (voor 1 kind, jongste leeftijden) tot ongeveer 20% voor een kind van 24 jaar of meer. Dit weerspiegelt hogere kosten voor tieners en studerende jongvolwassenen." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan kinderalimentatie herberekend worden?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Bij een significante wijziging van omstandigheden (inkomenswijziging, nieuwe partner, wijziging verblijfsregeling, veranderende behoeften van het kind) kan een herberekening gevraagd worden — via onderling akkoord (notariële akte) of via de familierechtbank." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is kinderalimentatie fiscaal aftrekbaar?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja, onder voorwaarden. In 2026 is 60% van de betaalde alimentatie aftrekbaar voor de betaler (dit percentage daalt jaarlijks: 50% vanaf 2027). De alimentatie moet vastgelegd zijn bij vonnis of gehomologeerde overeenkomst. Zie onze pagina over indexering en fiscaliteit voor details." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alimentatie-berekenen.be/" },
+        { "@type": "ListItem", "position": 2, "name": "Kinderalimentatie berekenen", "item": "https://alimentatie-berekenen.be/kinderalimentatie-berekenen/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <span class="flag">🇧🇪</span>
+  <h1>Kinderalimentatie Berekenen — IGAK Tabel per Leeftijd</h1>
+  <p>Officiële methode Hobin/IGAK. Volledige tabel 0-24 jaar. Gratis, geen account nodig.</p>
+  <nav class="crossnav">
+    <a href="/">Hoofdcalculator</a>
+    <a href="/partneralimentatie-berekenen/">Partneralimentatie</a>
+    <a href="/alimentatie-indexering/">Indexering</a>
+    <a href="/davo-onderhoudsgeld/">DAVO / niet betaald</a>
+  </nav>
+</header>
+
+<div class="container tool-wrapper">
+  <div class="tool-card" style="border-radius:12px;">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Netto inkomen ouder 1 <span>€/maand</span></label>
+        <input type="number" id="inkA" min="0" placeholder="ex: 2500">
+      </div>
+      <div class="form-group">
+        <label>Ouder 1 gezinssituatie</label>
+        <select id="statusA"><option value="alleen">Alleenstaand</option><option value="samen">Samenwonend</option></select>
+      </div>
+      <div class="form-group">
+        <label>Netto inkomen ouder 2 <span>€/maand</span></label>
+        <input type="number" id="inkB" min="0" placeholder="ex: 1800">
+      </div>
+      <div class="form-group">
+        <label>Ouder 2 gezinssituatie</label>
+        <select id="statusB"><option value="alleen">Alleenstaand</option><option value="samen">Samenwonend</option></select>
+      </div>
+      <div class="form-group">
+        <label>Aantal kinderen</label>
+        <select id="nKinderen" onchange="renderLeeftijdInputs()">
+          <option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Verblijfsregeling</label>
+        <select id="verblijf">
+          <option value="week_week">Week/week (50/50)</option>
+          <option value="8_6">8/6 dagen + helft vakantie</option>
+          <option value="9_5">9/5 dagen + helft vakantie</option>
+          <option value="10_4">10/4 dagen + helft vakantie</option>
+          <option value="11_3" selected>11/3 dagen + helft vakantie</option>
+          <option value="we_helft_vak">1 weekend/2 + helft vakantie</option>
+        </select>
+      </div>
+      <div class="form-group full" id="leeftijd-container">
+        <label>Leeftijd van elk kind</label>
+        <div class="form-grid" id="leeftijd-fields"></div>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculerKind()">Bereken kinderalimentatie →</button>
+    <div class="result" id="result-kind">
+      <div class="result-hero">
+        <div class="r-label" id="rk-label">Alimentatie</div>
+        <div class="r-amount" id="rk-amount">—</div>
+        <div class="r-sub" id="rk-sub"></div>
+      </div>
+      <div class="result-grid" id="rk-grid"></div>
+      <div class="result-note" id="rk-note"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container content">
+  <h2 class="section-title">Volledige IGAK-tabel — kost per kind naargelang leeftijd</h2>
+  <p>Onderstaande tabel toont het gemiddelde aandeel van het gezinsinkomen besteed aan <strong>1 kind</strong> in een gezin met 2 kinderen, per leeftijd en per inkomensschijf van het gezin (bron: officiële IGAK 2025-tabel, methode Hobin).</p>
+  <div class="table-wrap">
+    <table class="igak-table">
+      <thead><tr><th>Leeftijd</th><th>≤ 2000€</th><th>2001-4000€</th><th>4001-6000€</th><th>6001-8000€</th><th>&gt; 8000€</th></tr></thead>
+      <tbody id="igak-table-body"></tbody>
+    </table>
+  </div>
+  <p style="font-size:0.85rem;color:var(--muted);">Tabel voor een gezin met 2 kinderen. Voor 1, 3, 4 of 5 kinderen gebruikt de rekentool hierboven automatisch de juiste kolom.</p>
+
+  <h2 class="section-title">Tot welke leeftijd is kinderalimentatie verschuldigd?</h2>
+  <p>Er bestaat <strong>geen wettelijke leeftijdsgrens</strong> voor kinderalimentatie in België. De verplichting eindigt wanneer het kind zelfstandig in zijn eigen onderhoud kan voorzien — in de praktijk vaak pas na het afronden van de studies, soms tot 24-25 jaar bij langere studietrajecten. De IGAK-tabel voorziet daarom cijfers tot en met "24 jaar of meer".</p>
+
+  <h2 class="section-title">Veelgestelde vragen</h2>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Tot welke leeftijd moet kinderalimentatie betaald worden?</button>
+    <div class="faq-a">In principe tot het kind zelfstandig in zijn onderhoud kan voorzien — er is geen vaste leeftijdsgrens in de wet. In de praktijk loopt dit meestal door tot het einde van de studies (vaak 22-25 jaar).</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Hoe verandert kinderalimentatie met de leeftijd van het kind?</button>
+    <div class="faq-a">Volgens de IGAK-tabel stijgt de gemiddelde kost van een kind naarmate het ouder wordt — van ongeveer 15% van het gezinsinkomen (1 kind, jongste leeftijden) tot ongeveer 20% voor een kind van 24 jaar of meer.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Kan kinderalimentatie herberekend worden?</button>
+    <div class="faq-a">Ja. Bij een significante wijziging van omstandigheden kan een herberekening gevraagd worden — via onderling akkoord (notariële akte) of via de familierechtbank.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Is kinderalimentatie fiscaal aftrekbaar?</button>
+    <div class="faq-a">Ja, onder voorwaarden. In 2026 is 60% aftrekbaar voor de betaler (percentage daalt jaarlijks). Zie onze <a href="/alimentatie-indexering/" style="color:var(--brand);">indexering en fiscaliteit</a>-pagina.</div>
+  </div>
+
+  <div class="disclaimer-box">
+    <strong>Disclaimer:</strong> vereenvoudigde schatting op basis van de officiële IGAK-tabel. Voor complexe dossiers, raadpleeg de <a href="https://www.rechtbanken-tribunaux.be/nl/node/3520" target="_blank" rel="noopener">volledige officiële rekentool</a> of een advocaat familierecht.
+    <div class="last-verified">Laatst geverifieerd: 31 juli 2026</div>
+  </div>
+</div>
+
+<footer>
+  <p>Alimentatie Berekenen België — Gesmine-Invest Limited</p>
+  <p><a href="/">← Terug naar hoofdcalculator</a></p>
+</footer>
+
+<script src="/assets/calc-engine.js"></script>
+<script>
+function renderLeeftijdInputs() {
+  const n = parseInt(document.getElementById('nKinderen').value) || 1;
+  const container = document.getElementById('leeftijd-fields');
+  let html = '';
+  for (let i = 0; i < n; i++) {
+    html += `<div class="form-group"><label>Kind ${i+1}</label><input type="number" id="leeftijd${i}" min="0" max="25" placeholder="ex: 10"></div>`;
+  }
+  container.innerHTML = html;
+}
+renderLeeftijdInputs();
+
+function calculerKind() {
+  const inkA = parseFloat(document.getElementById('inkA').value);
+  const inkB = parseFloat(document.getElementById('inkB').value);
+  const n = parseInt(document.getElementById('nKinderen').value);
+  if (!inkA || inkA <= 0 || !inkB || inkB <= 0) { alert('Geef de netto inkomens van beide ouders in.'); return; }
+  const kinderen = [];
+  for (let i = 0; i < n; i++) {
+    const v = parseInt(document.getElementById('leeftijd' + i).value);
+    kinderen.push(isNaN(v) ? 10 : v);
+  }
+  const r = berekenHobin({
+    inkomenOuder1: inkA, inkomenOuder2: inkB,
+    ouder1Alleenstaand: document.getElementById('statusA').value === 'alleen',
+    ouder2Alleenstaand: document.getElementById('statusB').value === 'alleen',
+    kinderen: kinderen,
+    verblijfId: document.getElementById('verblijf').value,
+    groeipakketOuder1: 0, groeipakketOuder2: 0
+  });
+  const betalerLabel = r.betaler === 1 ? 'Ouder 1 betaalt aan Ouder 2' : (r.betaler === 2 ? 'Ouder 2 betaalt aan Ouder 1' : 'Geen alimentatie verschuldigd');
+  document.getElementById('rk-label').textContent = betalerLabel;
+  document.getElementById('rk-amount').textContent = fmt(r.onderhoudsbijdrage) + '/maand';
+  document.getElementById('rk-sub').textContent = `Kost kinderen: ${fmt(r.brutoKostTotaal)}/maand — verdeling ${Math.round(r.aandeel1*100)}% / ${Math.round(r.aandeel2*100)}%`;
+  document.getElementById('rk-grid').innerHTML = `
+    <div class="r-stat"><div class="sv">${fmt(r.brutoKostTotaal)}</div><div class="sl">Totale kinderkost</div></div>
+    <div class="r-stat"><div class="sv">${Math.round(r.aandeel1*100)}%</div><div class="sl">Aandeel Ouder 1</div></div>
+    <div class="r-stat"><div class="sv">${Math.round(r.aandeel2*100)}%</div><div class="sl">Aandeel Ouder 2</div></div>
+  `;
+  document.getElementById('rk-note').innerHTML = `💡 Vereenvoudigde schatting volgens de officiële IGAK-tabel 2025. Voor exacte berekening, gebruik de <a href="https://www.rechtbanken-tribunaux.be/nl/node/3520" target="_blank" rel="noopener">volledige officiële rekentool</a>.`;
+  document.getElementById('result-kind').style.display = 'block';
+  document.getElementById('result-kind').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Vul de zichtbare IGAK-tabel (2 kinderen, alle leeftijden) op basis van calc-engine data
+(function renderIgakTable() {
+  const tbody = document.getElementById('igak-table-body');
+  const kolommen = IGAK_KOLOM_MAPPING['2']; // [6,5,4,5,6] voor categorie 1..5
+  const leeftijdenTeTonen = [0, 3, 6, 9, 12, 15, 18, 21, 24];
+  let html = '';
+  leeftijdenTeTonen.forEach(lft => {
+    const label = lft === 24 ? '24+' : lft;
+    html += `<tr><td>${label} jaar</td>`;
+    kolommen.forEach(kolom => {
+      const pct = IGAK_AGE_TABLE[lft][kolom - 1] * 100;
+      html += `<td>${pct.toFixed(2).replace('.', ',')}%</td>`;
+    });
+    html += '</tr>';
+  });
+  tbody.innerHTML = html;
+})();
+
+function toggleFaq(btn) { btn.classList.toggle('open'); btn.nextElementSibling.classList.toggle('open'); }
+</script>
+</body>
+</html>

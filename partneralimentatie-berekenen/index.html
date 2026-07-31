@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partneralimentatie Berekenen België 2026 — Plafond 1/3 Inkomen</title>
+<meta name="description" content="Bereken partneralimentatie (persoonlijk onderhoudsgeld) tussen ex-partners in België. Indicatief plafond van 1/3 van het netto-inkomen van de onderhoudsplichtige. Gratis rekentool.">
+<meta name="keywords" content="partner alimentatie berekenen, partneralimentatie berekenen, alimentatie ex partner berekenen, alimentatie partner">
+<link rel="canonical" href="https://alimentatie-berekenen.be/partneralimentatie-berekenen/">
+<meta property="og:title" content="Partneralimentatie Berekenen België 2026">
+<meta property="og:description" content="Plafond 1/3 inkomen, indicatieve schatting persoonlijk onderhoudsgeld tussen ex-partners.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alimentatie-berekenen.be/partneralimentatie-berekenen/">
+<meta property="og:locale" content="nl_BE">
+<link rel="icon" href="/favicon.png" type="image/png">
+<meta property="og:image" content="https://alimentatie-berekenen.be/og-image.png">
+<link rel="stylesheet" href="/assets/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Partneralimentatie Berekenen België 2026",
+      "url": "https://alimentatie-berekenen.be/partneralimentatie-berekenen/",
+      "description": "Rekentool voor persoonlijk onderhoudsgeld (partneralimentatie) tussen ex-partners in België.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "nl-BE",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "areaServed": { "@type": "Country", "name": "Belgium" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hoe wordt partneralimentatie berekend in België?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Partneralimentatie (persoonlijk onderhoudsgeld, art. 301 Burgerlijk Wetboek) is geen automatisch percentage van het inkomen — het is gebaseerd op de 'behoefte' van de aanvrager en de 'mogelijkheden' van de andere partner. Een courante rechtspraak beperkt het bedrag doorgaans tot 1/3 van het netto-inkomen van de onderhoudsplichtige partner, maar dit is geen wettelijk plafond." }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe lang duurt partneralimentatie in België?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Bij een echtscheiding op grond van onherstelbare ontwrichting is de duur van het onderhoudsgeld in principe beperkt tot de duur van het huwelijk, tenzij de rechter hiervan gemotiveerd afwijkt. Partijen kunnen ook onderling een andere duur overeenkomen." }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan partneralimentatie stopgezet worden?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja, onder meer bij hertrouwen of wettelijke samenwoning van de ontvanger, bij een significante inkomenswijziging van een van de partijen, of na afloop van de vooraf bepaalde termijn." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alimentatie-berekenen.be/" },
+        { "@type": "ListItem", "position": 2, "name": "Partneralimentatie berekenen", "item": "https://alimentatie-berekenen.be/partneralimentatie-berekenen/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <span class="flag">🇧🇪</span>
+  <h1>Partneralimentatie Berekenen — Persoonlijk Onderhoudsgeld</h1>
+  <p>Indicatieve schatting op basis van het jurisprudentiële plafond van 1/3 van het netto-inkomen.</p>
+  <nav class="crossnav">
+    <a href="/">Hoofdcalculator</a>
+    <a href="/kinderalimentatie-berekenen/">Kinderalimentatie</a>
+    <a href="/alimentatie-indexering/">Indexering</a>
+    <a href="/davo-onderhoudsgeld/">DAVO / niet betaald</a>
+  </nav>
+</header>
+
+<div class="container tool-wrapper">
+  <div class="tool-card" style="border-radius:12px;">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Netto inkomen onderhoudsplichtige <span>€/maand</span></label>
+        <input type="number" id="revDebiteur" min="0" placeholder="ex: 3000">
+      </div>
+      <div class="form-group">
+        <label>Netto inkomen aanvrager <span>€/maand</span></label>
+        <input type="number" id="revCreancier" min="0" placeholder="ex: 1200">
+      </div>
+      <div class="form-group full">
+        <label>Behoefte aanvrager <span>€/maand — optioneel, laat leeg voor enkel het plafond</span></label>
+        <input type="number" id="besoin" min="0" placeholder="ex: 800">
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculerPartner()">Bereken partneralimentatie →</button>
+    <div class="result" id="result-partner">
+      <div class="result-hero">
+        <div class="r-label" id="rp-label">Partneralimentatie</div>
+        <div class="r-amount" id="rp-amount">—</div>
+        <div class="r-sub" id="rp-sub"></div>
+      </div>
+      <div class="result-grid" id="rp-grid"></div>
+      <div class="result-note" id="rp-note"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container content">
+  <h2 class="section-title">Hoe wordt partneralimentatie berekend?</h2>
+  <p><strong>Partneralimentatie</strong> (persoonlijk onderhoudsgeld tussen ex-echtgenoten of ex-partners, art. 301 Burgerlijk Wetboek) verschilt fundamenteel van kinderalimentatie: het is <strong>geen automatisch percentage</strong> van het inkomen, maar gebaseerd op de "behoefte" van de aanvrager en de "mogelijkheden" van de andere partner. Er bestaat geen wettelijk vastgelegd bedrag of percentage.</p>
+  <p>In de praktijk hanteren rechtbanken doorgaans een indicatief <strong>plafond van 1/3 van het netto-inkomen</strong> van de onderhoudsplichtige partner — dit is jurisprudentie, geen wet, en een rechter kan hiervan afwijken naargelang de concrete omstandigheden.</p>
+
+  <h2 class="section-title">Veelgestelde vragen</h2>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Hoe wordt partneralimentatie berekend in België?</button>
+    <div class="faq-a">Partneralimentatie is gebaseerd op de "behoefte" van de aanvrager en de "mogelijkheden" van de andere partner — geen automatisch percentage. Een courante rechtspraak beperkt het bedrag doorgaans tot 1/3 van het netto-inkomen van de onderhoudsplichtige, maar dit is geen wettelijk plafond.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Hoe lang duurt partneralimentatie in België?</button>
+    <div class="faq-a">Bij een echtscheiding op grond van onherstelbare ontwrichting is de duur in principe beperkt tot de duur van het huwelijk, tenzij de rechter hiervan gemotiveerd afwijkt.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Kan partneralimentatie stopgezet worden?</button>
+    <div class="faq-a">Ja, onder meer bij hertrouwen of wettelijke samenwoning van de ontvanger, bij een significante inkomenswijziging, of na afloop van de vooraf bepaalde termijn.</div>
+  </div>
+
+  <div class="disclaimer-box">
+    <strong>Disclaimer:</strong> deze schatting is puur indicatief. Partneralimentatie hangt sterk af van de concrete omstandigheden (huwelijksduur, levensstandaard tijdens het huwelijk, leeftijd, gezondheid). Raadpleeg een advocaat familierecht voor een precieze inschatting.
+    <div class="last-verified">Laatst geverifieerd: 31 juli 2026</div>
+  </div>
+</div>
+
+<footer>
+  <p>Alimentatie Berekenen België — Gesmine-Invest Limited</p>
+  <p><a href="/">← Terug naar hoofdcalculator</a></p>
+</footer>
+
+<script src="/assets/calc-engine.js"></script>
+<script>
+function fmtLocal(n) { return Math.round(n).toLocaleString('nl-BE') + ' €'; }
+
+function calculerPartner() {
+  const revDebiteur = parseFloat(document.getElementById('revDebiteur').value);
+  const revCreancier = parseFloat(document.getElementById('revCreancier').value);
+  const besoinInput = document.getElementById('besoin').value;
+  const besoin = besoinInput !== '' ? parseFloat(besoinInput) : null;
+  if (!revDebiteur || revDebiteur <= 0) { alert('Geef minstens het inkomen van de onderhoudsplichtige in.'); return; }
+
+  const plafondDerde = revDebiteur / 3;
+  let label, amount, sub, note;
+
+  if (besoin !== null && besoin > 0) {
+    const pension = Math.min(besoin, plafondDerde);
+    label = 'Geschatte partneralimentatie';
+    amount = fmtLocal(pension) + '/maand';
+    sub = `Opgegeven behoefte: ${fmtLocal(besoin)}/maand — plafond 1/3 inkomen: ${fmtLocal(plafondDerde)}/maand`;
+    note = pension === plafondDerde && besoin > plafondDerde
+      ? '⚠️ De opgegeven behoefte overschrijdt het plafond van 1/3 van het inkomen — bedrag herleid tot dit plafond (jurisprudentie, geen wet).'
+      : '💡 Gebaseerd op de opgegeven behoefte, onder het plafond van 1/3 inkomen.';
+  } else {
+    label = 'Indicatief maximumplafond (behoefte niet opgegeven)';
+    amount = fmtLocal(plafondDerde) + '/maand';
+    sub = `1/3 van het netto-inkomen (${fmtLocal(revDebiteur)}/maand) — geen automatisch bedrag`;
+    note = '⚠️ Dit is een <strong>plafond</strong>, geen automatisch bedrag: zonder opgegeven "behoefte" van de aanvrager is er geen alimentatie automatisch verschuldigd. Raadpleeg een advocaat voor een precieze inschatting.';
+  }
+
+  document.getElementById('rp-label').textContent = label;
+  document.getElementById('rp-amount').textContent = amount;
+  document.getElementById('rp-sub').textContent = sub;
+  document.getElementById('rp-grid').innerHTML = `
+    <div class="r-stat"><div class="sv">${fmtLocal(revDebiteur)}</div><div class="sl">Inkomen onderhoudsplichtige</div></div>
+    <div class="r-stat"><div class="sv">${fmtLocal(revCreancier || 0)}</div><div class="sl">Inkomen aanvrager</div></div>
+    <div class="r-stat"><div class="sv">${fmtLocal(plafondDerde)}</div><div class="sl">Plafond 1/3 inkomen</div></div>
+  `;
+  document.getElementById('rp-note').innerHTML = note;
+  document.getElementById('result-partner').style.display = 'block';
+  document.getElementById('result-partner').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function toggleFaq(btn) { btn.classList.toggle('open'); btn.nextElementSibling.classList.toggle('open'); }
+</script>
+</body>
+</html>

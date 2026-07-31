@@ -1,0 +1,19 @@
+{
+  "year": 2026,
+  "deductible_pct_debtor": 60,
+  "taxable_pct_creditor": 60,
+  "history": [
+    { "year": 2024, "pct": 80 },
+    { "year": 2025, "pct": 70 },
+    { "year": 2026, "pct": 60 },
+    { "year": 2027, "pct": 50, "status": "gepland, nog te bevestigen bij wet eind 2026" }
+  ],
+  "eea_restriction": {
+    "applies_since": 2025,
+    "rule": "Aftrekbaarheid geldt enkel indien de begunstigde (het kind of de ex-partner) fiscaal inwoner is van de EER (Europese Economische Ruimte) of Zwitserland. Buiten de EER/Zwitserland: 0% aftrekbaar."
+  },
+  "source": "SPF Financiën / FOD Financiën — wet van 18 december 2025",
+  "source_url": "https://fin.belgium.be/nl/particulieren/belastingvoordelen/onderhoudsgeld-betaald",
+  "last_verified": "2026-07-31",
+  "note": "Dit percentage is TIJDELIJK en wijzigt elk jaar (afbouw van 80% naar 50% tussen 2024 en 2027). Nooit in HTML/JS hardcoden — dit bestand is de enige bron. Jaarlijkse update nodig, typisch midden december wanneer het tarief voor het volgende jaar wettelijk bevestigd wordt."
+}
